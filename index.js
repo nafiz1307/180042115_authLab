@@ -1,11 +1,18 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+
+//Import Routes
+const authRoute = require('./routes/auth');
+
+dotenv.config();
 
 //Connect to Database
 const connectDB = async () => {
     try {
-      await mongoose.connect('mongodb+srv://nafiz:nafiz@cluster0.gq5sd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+      await mongoose.connect(process.env.DBCONNECT, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
@@ -17,8 +24,9 @@ const connectDB = async () => {
   };
 connectDB();
 
-//Import Routes
-const authRoute = require('./routes/auth');
+//Middlewares
+app.use(express.json());
+
 
 //Routes Middlewares
 app.use(authRoute);
