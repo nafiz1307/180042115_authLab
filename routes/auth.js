@@ -52,12 +52,12 @@ router.post('/login', async (req,res)=>{
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword) return res.status(400).send ('Email and Password do not match!')
 
-    //Creating and Assigning token
-    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
-    res.header('authorization-token',token).send(token);
+    // //Creating and Assigning token
+    // const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+    // res.header('authorization-token',token).send(token);
     
 
-    res.send("Logged In!")
+    res.send(`${user.name} logged in`)
 })
 
 
