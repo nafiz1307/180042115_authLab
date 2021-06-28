@@ -13,6 +13,10 @@ router.post('/register', async (req,res)=>{
     // // res.send(error.details[0].message);
     const {error}= registrationValidation(req.body);
     if(error) return res.status(400).send(error.details[0].message);
+
+    //Checking User Duplication
+    const userExist = await User.findOne({email : req.body.email});
+    if(userExist) return res.status(400).send('User Email already exists!')
     
     // Hashing Passwords
     const salt = await bcrypt.genSalt(10);
