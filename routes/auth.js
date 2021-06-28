@@ -59,7 +59,7 @@ router.post('/login', async (req,res)=>{
     // res.header('authorization-token',token).send(token);
     
 
-    res.sendFile("dashboard.html",{root : "./views"})
+    res.sendFile("index.html",{root : "./views"})
 })
 
 

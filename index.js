@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+app.use(express.static("public"));
+
 //Import Routes
 const authRoute = require('./routes/auth');
 
@@ -35,10 +37,13 @@ app.use(authRoute);
 
 
 app.get('/login',(req,res)=>{
-  res.sendFile("login.html",{root : "./views"})
+  res.sendFile("login-v2.html",{root : "./views"})
 });
 app.get('/register',(req,res)=>{
-  res.sendFile("registration.html",{root : "./views"})
+  res.sendFile("register-v2.html",{root : "./views"})
+});
+app.get('/',(req,res)=>{
+  res.sendFile("homepage.html",{root : "./views"})
 });
 
 
