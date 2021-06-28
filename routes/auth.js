@@ -8,6 +8,7 @@ const {loginValidation, registrationValidation}= require('./validation');
 
 
 
+//Registration route
 router.post('/register', async (req,res)=>{
 
     // //Data Validation before user input
@@ -58,7 +59,7 @@ router.post('/login', async (req,res)=>{
     // res.header('authorization-token',token).send(token);
     
 
-    res.send(`${user.name} logged in`)
+    res.sendFile("dashboard.html",{root : "./views"})
 })
 
 

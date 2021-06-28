@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="register" method="post">
-        <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter name" name="name" id="name" required>
+      <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+        <label for="name"><b>Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter name"
+          name="name"
+          id="name"
+          required
+        />
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <label for="email"><b>Email</b></label>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        />
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+        <label for="password"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          id="password"
+          required
+        />
 
-    <label for="password_confirmation"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="password_confirmation" id="password_confirmation" required>
+        <label for="password_confirmation"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="password_confirmation"
+          id="password_confirmation"
+          required
+        />
 
-    <label for="gender"><b>Gender</b></label>
-    <input type="text" placeholder="Enter Gender(Male/Female)" name="gender" id="gender" required>
-    <hr>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
+        <label for="gender"><b>Gender</b></label>
+        <input
+          type="text"
+          placeholder="Enter Gender(Male/Female)"
+          name="gender"
+          id="gender"
+          required
+        />
+        <hr />
+        <button type="submit" class="registerbtn">Register</button>
+      </div>
 
-  <div class="container signin">
-    <p>Already have an account? <a href="/login">Sign in</a>.</p>
-  </div>
+      <div class="container signin">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+      </div>
     </form>
-</body>
+  </body>
 </html>
