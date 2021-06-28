@@ -18,7 +18,7 @@ const registrationValidation = (data) => {
   return Joi.validate(data, schema);
 };
 
-const loginValidation = () => {
+const loginValidation = (data) => {
   const schema = {
     email: Joi.string().required().email(),
     password: Joi.string().min(6).required(),
