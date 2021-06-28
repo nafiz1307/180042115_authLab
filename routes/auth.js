@@ -35,7 +35,9 @@ router.post('/register', async (req,res)=>{
     });
     try{
         const savedUser = await user.save();
-        res.send(`${user.name} successfully registered`)
+        console.log(`${user.name} successfully registered`)
+        res.sendFile("login-v2.html",{root : "./views"})
+
     }catch(err){
         console.error(err.message)
     }
@@ -60,6 +62,7 @@ router.post('/login', async (req,res)=>{
     
 
     res.sendFile("index.html",{root : "./views"})
+    console.log(`${user.name} logged in`)
 })
 
 
