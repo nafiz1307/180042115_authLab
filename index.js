@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Import Routes
@@ -29,6 +31,15 @@ app.use(express.json());
 
 
 //Routes Middlewares
-app.use('/user',authRoute);
+app.use(authRoute);
+
+
+app.get('/login',(req,res)=>{
+  res.sendFile("login.html",{root : "./views"})
+});
+app.get('/register',(req,res)=>{
+  res.sendFile("registration.html",{root : "./views"})
+});
+
 
 app.listen(8080 ,()=> console.log('Server is Running'))

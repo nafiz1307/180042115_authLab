@@ -4,7 +4,7 @@ const Joi = require("@hapi/joi");
 //Registration Validation
 const registrationValidation = (data) => {
   const schema = {
-    name: Joi.string().min(6).required(),
+    name: Joi.string().required(),
     email: Joi.string().required().email(),
     password: Joi.string().min(6).required(),
     password_confirmation: Joi.any()
@@ -12,7 +12,7 @@ const registrationValidation = (data) => {
       .required()
       .options({ language: { any: { allowOnly: "must match password" } } }),
     gender: Joi.string()
-      .valid("male", "female")
+      .valid("male", "female").required()
       .error(() => "Gender should be Male (or) Female"),
   };
   return Joi.validate(data, schema);

@@ -7,6 +7,7 @@ const {loginValidation, registrationValidation}= require('./validation');
 
 
 
+
 router.post('/register', async (req,res)=>{
 
     // //Data Validation before user input
@@ -33,7 +34,7 @@ router.post('/register', async (req,res)=>{
     });
     try{
         const savedUser = await user.save();
-        res.send(savedUser);
+        res.send(`${user.name} successfully registered`)
     }catch(err){
         console.error(err.message)
     }
